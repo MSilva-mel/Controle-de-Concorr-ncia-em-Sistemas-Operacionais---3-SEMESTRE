@@ -1,0 +1,24 @@
+A problemática da concorrência em sistemas operacionais pode ser entendida através de algumas situações comuns:
+
+Condições de Corrida: Condições de corrida ocorrem quando o resultado de uma operação depende da ordem de execução das instruções concorrentes. 
+Por exemplo, se dois processos estão tentando atualizar o mesmo contador, o resultado final pode variar dependendo da ordem em que as operações de leitura e escrita são realizadas.
+
+Inconsistência de Dados: Quando múltiplos processos estão acessando e modificando os mesmos dados compartilhados, pode haver situações em que os
+dados acabam em um estado inconsistente. Por exemplo, se um processo estiver atualizando um registro em um banco de dados enquanto outro processo 
+estiver lendo esse mesmo registro, o processo de leitura pode obter uma versão desatualizada dos dados.
+
+Deadlocks: Um deadlock ocorre quando dois ou mais processos ficam bloqueados indefinidamente, aguardando recursos que estão sendo mantidos por 
+outros processos. Isso pode ocorrer quando os processos adquirem recursos de forma não ordenada e ficam esperando uns pelos outros para liberar os recursos necessários.
+
+As seções críticas são áreas de código onde dados compartilhados são acessados e modificados. É crucial garantir que apenas um processo por vez
+tenha acesso a uma seção crítica para evitar problemas de concorrência. Características importantes das seções críticas incluem:
+
+Exclusividade de Acesso: Apenas um processo pode estar dentro de uma seção crítica em um determinado momento.
+
+Consistência de Dados: Ao garantir a exclusão mútua, asseguramos que os dados dentro da seção crítica permaneçam consistentes.
+Atomicidade de Operações: Operações dentro de uma seção crítica devem ser executadas como uma única unidade atômica, garantindo que não 
+sejam interrompidas por outros processos.
+
+Para garantir a exclusão mútua e proteger as seções críticas, os sistemas operacionais utilizam diferentes mecanismos de sincronização, 
+como semáforos, mutex (mutual exclusion locks), monitores e variáveis de condição. Esses mecanismos ajudam a controlar o acesso concorrente 
+aos recursos compartilhados e a prevenir problemas como condições de corrida e deadlocks.
